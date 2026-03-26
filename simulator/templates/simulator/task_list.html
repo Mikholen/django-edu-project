@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тренажер по физике</title>
+</head>
+<body>
+    <h1>Доступные задачи</h1>
+    <hr>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong> — 
+                <a href="#">Решить</a>
+            </li>
+        {% empty %}
+            <li>Задач пока нет. Добавьте их в админке!</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
