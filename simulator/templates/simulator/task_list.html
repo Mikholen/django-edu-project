@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Тренажер по физике</title>
-</head>
-<body>
-    <h1>Доступные задачи</h1>
-    <hr>
-    <ul>
+{% extends 'base.html' %}
+
+{% block title %}Список задач{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Доступные задачи</h1>
+    <div class="list-group">
         {% for task in tasks %}
-            <li>
-                <strong>{{ task.title }}</strong> — 
-                <a href="#">Решить</a>
-            </li>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">{{ task.title }}</h5>
+                </div>
+                <a href="{% url 'task_detail' task.id %}" class="btn btn-primary">Решить</a>
+            </div>
         {% empty %}
-            <li>Задач пока нет. Добавьте их в админке!</li>
+            <p class="text-muted">Задач пока нет. Добавьте их в админке!</p>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+{% endblock %}

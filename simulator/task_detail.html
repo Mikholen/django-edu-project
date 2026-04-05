@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ task.title }}</title>
+</head>
+<body>
+    <a href="{% url 'task_list' %}">← Назад к списку</a>
+    <h1>{{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    
+    {% if task.formula_hint %}
+        <p><i>Подсказка: {{ task.formula_hint }}</i></p>
+    {% endif %}
+
+    <hr>
+
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Проверить ответ</button>
+    </form>
+</body>
+</html>
