@@ -32,12 +32,12 @@
    cd django-edu-project
 
 2. **Создайте локальную среду:**
-   # Для Windows:
+   **Для Windows:**
    ```bash
    python -m venv .venv
    .venv\Scripts\activate
 
-   # Для Linux/macOS:
+   **Для Linux/macOS:**
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
