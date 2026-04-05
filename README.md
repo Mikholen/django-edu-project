@@ -28,7 +28,7 @@
 
 1. **Клонируйте репозиторий:**
    ```bash
-   git clone <ссылка_на_твой_репозиторий>
+   git clone git@github.com:Mikholen/django-edu-project.git
    cd django-edu-project
 
 2. **Создайте локальную среду:**
